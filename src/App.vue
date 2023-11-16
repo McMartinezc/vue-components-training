@@ -3,6 +3,7 @@ import IdCard from './components/IdCard.vue';
 import Random from './components/Random.vue'
 import BoxColor from './components/BoxColor.vue';
 import Greetings from './components/Greetings.vue';
+import Rating from './components/Rating.vue';
 
 </script>
 
@@ -32,9 +33,18 @@ import Greetings from './components/Greetings.vue';
 
   <section>
     <h2>Greetings </h2>
-
     <Greetings lang="de"><span style="color: yellow">Ludwig</span></Greetings>
     <Greetings lang="fr"><strong>François</strong></Greetings>
+  </section>
+
+  <section>
+    <h2>Rating </h2>
+    <Rating :rate="0" />
+    <Rating :rate="1.49" />
+    <Rating :rate="1.5" />
+    <Rating :rate="3" />
+    <Rating :rate="4" />
+    <Rating :rate="5" />
   </section>
 </template>
 
