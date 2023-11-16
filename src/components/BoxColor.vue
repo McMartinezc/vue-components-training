@@ -20,10 +20,18 @@ const getColorHEX = () => {
     return `#${red}${green}${blue}`;
 };
 
+const whiteOrBlack = (r,g,b) =>{
+    if (r < 128 || g < 128 || b< 128){
+        return "white";
+    }
+    return "black";
+}
+
+
 </script>
 
 <template>
-    <div :style="{ backgroundColor: getColorRGB }">
+    <div :style="{ backgroundColor: getColorRGB, color: whiteOrBlack(r,g,b) }" class="container">
         <p>{{ getColorRGB }}</p>
         <p>{{ getColorHEX() }}</p>
     </div>
@@ -37,6 +45,5 @@ div {
 
 p {
     text-align: center;
-    color: whitesmoke;
 }
 </style>
