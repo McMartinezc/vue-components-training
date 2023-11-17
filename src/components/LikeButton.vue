@@ -5,8 +5,8 @@ import { ref } from 'vue';
 const counter = ref(0);
 const colors= ref(['purple','blue','green','yellow','orange','red']);
 
-const updateCounter = (click)=>{
-    counter.value = counter.value + click;
+const updateCounter = ()=>{
+    counter.value ++;
 }
 
 const currentColor = computed(() => colors.value[counter.value]);
@@ -17,7 +17,10 @@ const currentColor = computed(() => colors.value[counter.value]);
 <template>
 
 <div>
-    <button :style="{backgroundColor: currentColor}" @click="updateCounter(1)">Likes {{ counter }}</button>
+    <button :style="{backgroundColor: currentColor}" @click="updateCounter()">Likes {{ counter }}</button>
+
+    <button v-bind:style="{backgroundColor: colors[counter]}" v-on:click="counter++">Likes {{ counter }}</button>
+
 </div>
 
 </template>
