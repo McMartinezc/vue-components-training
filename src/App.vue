@@ -5,6 +5,7 @@ import BoxColor from './components/BoxColor.vue';
 import Greetings from './components/Greetings.vue';
 import Rating from './components/Rating.vue';
 import LikeButton from './components/LikeButton.vue';
+import Carousel from './components/Carousel.vue';
 
 </script>
 
@@ -51,6 +52,12 @@ import LikeButton from './components/LikeButton.vue';
   <section>
     <h2>Like Button </h2>
     <LikeButton />
+  </section>
+
+  <section>
+    <h2>Carousel</h2>
+    <Carousel :images="['https://randomuser.me/api/portraits/women/1.jpg'
+      , 'https://randomuser.me/api/portraits/men/1.jpg', 'https://randomuser.me/api/portraits/women/2.jpg' , 'https://randomuser.me/api/portraits/men/2.jpg']" />
   </section>
   
 </template>

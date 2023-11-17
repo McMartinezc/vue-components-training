@@ -9,7 +9,7 @@ const updateCounter = ()=>{
     counter.value ++;
 }
 
-const currentColor = computed(() => colors.value[counter.value]);
+const currentColor = computed(() => colors.value[counter.value % colors.value.length]);
 
 </script>
 
@@ -17,9 +17,9 @@ const currentColor = computed(() => colors.value[counter.value]);
 <template>
 
 <div>
-    <button :style="{backgroundColor: currentColor}" @click="updateCounter()">Likes {{ counter }}</button>
+    <button v-bind:style="{backgroundColor: currentColor}" @click="updateCounter()">Likes {{ counter }}</button>
 
-    <button v-bind:style="{backgroundColor: colors[counter]}" v-on:click="counter++">Likes {{ counter }}</button>
+    <button v-bind:style="{backgroundColor: colors[counter % colors.length]}" v-on:click="counter++">Likes {{ counter }}</button>
 
 </div>
 
