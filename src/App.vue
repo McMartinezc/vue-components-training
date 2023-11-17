@@ -4,6 +4,7 @@ import Random from './components/Random.vue'
 import BoxColor from './components/BoxColor.vue';
 import Greetings from './components/Greetings.vue';
 import Rating from './components/Rating.vue';
+import LikeButton from './components/LikeButton.vue';
 
 </script>
 
@@ -46,6 +47,12 @@ import Rating from './components/Rating.vue';
     <Rating :rate="4" />
     <Rating :rate="5" />
   </section>
+
+  <section>
+    <h2>Like Button </h2>
+    <LikeButton />
+  </section>
+  
 </template>
 
 <style scoped>
